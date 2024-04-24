@@ -1,0 +1,190 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Style */
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+main::after {
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+.content .logo {
+    max-width: 50%;
+    width: 100%;
+    filter: invert(1);
+    margin-left: 20px;
+}
+
+.content .description {
+    width: 85%;
+    font-size: 24px;
+    color: #fff;
+    line-height: 30px;
+    margin-left: 20px;
+    text-align: justify;
+}
+
+.carouselBtn {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carouselBtn .btnCarousel {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #fff;
+}
+
+.carouselBtn .btnCarousel.btnSelection {
+    background-color: #1d8246;
+}
+
+.menuRight {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuRight ul {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menuRight .icon {
+    filter: invert(1);
+    width: 1.9rem;
+    transition: 0.3s ease-in-out;
+}
+
+.menuRight .icon:hover {
+    transform: scale(1.2);
+}
+
+.carouselImg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.carouselImg .imgCarousel {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: changeImage 0.7s;
+}
+
+.carouselImg .imgCarousel.action {
+    display: block;
+}
+
+@keyframes changeImage {
+    from {
+        opacity: 0.85;
+    } to {
+        opacity: 1;
+    }
+}
+
+/* Responsible */
+@media (max-width: 1280) {
+    body {
+        padding: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content .description {
+        width: 60%;
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .content .logo {
+        max-width: 350px;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 425px) {
+    body {
+        padding: 40px;
+    }
+
+    .content .description {
+        width: 100%;
+    }
+
+    .content .logo {
+        max-width: 300px;
+    }
+
+    .menuRight {
+        position: static;
+        min-height: auto;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .menuRight ul {
+        flex-direction: row;
+        gap: 50px
+    }
+
+    .container {
+        min-height: 70vh;
+        gap: 50px;
+    }
+}
