@@ -1,0 +1,1 @@
+- Neste projeto apresento a minha admiração ao piloto Brasileiro de Fórmula 1 Ayrton Senna, criando um carrossel de fotos históricas de Senna e uma breve descrição de seus feitos. Foi utilizado HTML, CSS, JavaScript e Json, também usando técnicas de responsividade.
